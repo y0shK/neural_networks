@@ -1,0 +1,10 @@
+class OptimalParty:
+    def __init__(self, weight, bias):
+        self.weight = weight
+        self.bias = bias
+
+    def feed_forward(self, inputParty):
+        totalParty = float(self.weight) + float(np.sum(inputParty)) + float(self.bias)
+
+        # squishes the output between 0 and 1 for network use
+        return sigmoid(totalParty)
