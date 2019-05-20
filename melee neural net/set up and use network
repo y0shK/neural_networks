@@ -1,0 +1,35 @@
+spacie_info = [combo, shine, recover]
+foxCount = 0
+falcoCount = 0
+
+# closer to 0 is Falco, closer to 1 is Fox
+# count uesr preferences to calculate which spacie is better to play
+for item in spacie_info:
+    if item == 0:
+        falcoCount += 1
+    elif item == 1:
+        foxCount += 1
+    else:
+        break
+
+weightFox = foxCount
+weightFalco = falcoCount
+bias = characterPreference
+
+fox = OptimalMelee(weightFox, bias)
+falco = OptimalMelee(weightFalco, bias)
+
+foxCalc = fox.feed_forward(foxArray)
+falcoCalc = falco.feed_forward(falcoArray)
+
+if foxCalc > falcoCalc:
+    print("play Fox: " + str(foxCalc))
+elif falcoCalc > foxCalc:
+    print("play Falco: " + str(falcoCalc))
+elif falcoCalc == foxCalc:
+    print("play either spacie")
+else:
+    print("play Marth?")
+
+print("\nFox likelihood: " + str(foxCalc))
+print("Falco likelihood: "+ str(falcoCalc))
