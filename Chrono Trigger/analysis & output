@@ -1,0 +1,13 @@
+computeWeights(c1, c2, c3, characterArray, 0, 1, 2, 4)
+weight = computeWeights.totalStat
+bias = computeBias.stat
+
+partySum = np.sum(characterArray[c1]) + np.sum(characterArray[c2]) + np.sum(characterArray[c3])
+
+# sigmoid needs inputs between 0 and 1, so squish partySum into a decimal
+partySum = partySum / 1000
+partyArray = [partySum]
+
+partyOptimize = OptimalParty(weight, bias)
+partyCalc = partyOptimize.feed_forward(partyArray)
+print("Your party optimality, from 0 to 1: " + str(partyCalc))
