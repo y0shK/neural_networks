@@ -1,0 +1,15 @@
+# arrays for input; use [1] to standardize before differentiating with questions
+foxArray = np.array([1])
+falcoArray = np.array([1])
+
+print("\nDo you like Falco or Fox better? Enter 0 for Falco and 1 for Fox.")
+characterPreference = int(input())
+
+print("\nDo you prefer vertical combos or horizontal combos? Enter 0 for vertical and 1 for horizontal.")
+combo = int(input())
+
+print("\nWhat direction do you want your shine? Enter 0 for vertical and 1 for horizontal.")
+shine = int(input())
+
+print("\nRecover with Phantasm or fire? Enter 0 for Phantasm and 1 for fire.")
+recover = int(input())
