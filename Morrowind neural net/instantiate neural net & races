@@ -1,0 +1,31 @@
+import numpy as np
+
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+class OptimalMorrowind:
+    def __init__(self, weight):
+        self.weight = weight
+
+    def feed_forward(self, input):
+        total = np.dot(self.weight, input)
+        return sigmoid(total)
+
+names = ["Altmer", "Argonian", "Bosmer", "Breton", "Dunmer",
+             "Imperial", "Khajiit", "Nord", "Orc", "Redguard"]
+
+# strength, intelligence, willpower, speed, endurance
+altmer = [30, 50, 40, 30, 40,]
+argonian = [40, 40, 30, 40, 30]
+bosmer = [30, 40, 30, 50, 30]
+breton = [40, 50, 50, 40, 30]
+dunmer = [40, 40, 30, 50, 35]
+imperial = [40, 40, 30, 40, 40]
+khajiit = [40, 40, 30, 50, 40]
+nord = [50, 30, 40, 40, 50]
+orc = [45, 30, 50, 30, 50]
+redguard = [50, 30, 30, 40, 50]
+
+speciesArray= [altmer, argonian, bosmer, breton, dunmer, imperial,
+             khajiit, nord, orc, redguard]
+             
